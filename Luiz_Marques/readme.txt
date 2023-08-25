@@ -1,0 +1,5 @@
+- Daniel Da Silva Pereira
+- Eduardo Queiroz Lerco
+- Luiz Augusto Marques
+- Lucas Lamboia Correia
+- Thalyson Baqueta de Lara
