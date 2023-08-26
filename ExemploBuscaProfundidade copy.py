@@ -1,7 +1,7 @@
 # DFS - Algoritmo para busca em profundidade
 
 # Função para imprimir a DFS do grafo recebe o primeiro nó a ser visitado
-def dfs(graph, start):
+def dfs(graph, start, objetivo):
     visited = set()  # Conjunto para acompanhar os nós visitados
     stack = [start]  # Pilha para a busca em profundidade
 
@@ -15,6 +15,10 @@ def dfs(graph, start):
             # Adiciona vizinhos não visitados à pilha
             stack.extend(graph[node] - visited)
 
+            if node == objetivo: 
+                print("Objetivo encontrado")
+                break; 
+
 
 # Exemplo de um grafo representado como um dicionário de adjacências
 graph = {
@@ -26,7 +30,8 @@ graph = {
     'F': {'C', 'E'}
 }
 
-start_node = 'A'  # Nó de início da busca
+start_node = 'D'  # Nó de início da busca
+objetivoFinal = 'F'  # Nó de fim da busca
 
 print("Resultado da busca em profundidade:")
-dfs(graph, start_node)
+dfs(graph, start_node, objetivoFinal)
