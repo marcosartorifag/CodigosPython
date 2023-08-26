@@ -18,7 +18,7 @@ class Graph:
         self.graph[u].append(v)
 
     # função para imprimir a BFS do grafo recebe o primeiro nó a ser visitado
-    def BFS(self, s):
+    def BFS(self, s, objetivo):
 
         # marca todos os vértices como não visitados.
         visited = [False] * (len(self.graph))
@@ -36,6 +36,10 @@ class Graph:
             # retira o último vértice inserido na fila e imprime
             s = queue.pop(0)  # Exclui valor e printa a resposta
             print(s, " ")
+
+            if (s == objetivo):
+                print("Objetivo encontrado")
+                break
 
             # Obtenha todos os vértices adjacentes dos vértices desenfileirados. Se um adjacente não foi visitado, marque-o como visitado e coloque-o na fila
             # quais vértices eu posso visitar a partir do atual? Sempre do menor pro maior.
@@ -60,4 +64,4 @@ g.addEdge(4, 5)
 g.addEdge(5, 1)
 
 print("Segue a execução do BFS, começando pelo vértice 0")
-g.BFS(0)
+g.BFS(0,5)
